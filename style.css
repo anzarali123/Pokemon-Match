@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+body {
+    height: 100vh;
+    background-color: #abe9cd;
+    background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
+    overflow: hidden;
+}
+.title {
+    text-align: center;
+    background: #3eadcf;
+    box-shadow: 2px 2px 2px rgba(0,0, 0, 0.7);
+    font-size: 40px;
+    color: white;
+}
+.player-lives {
+    width: fit-content;
+    margin-left: 10%;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background: white;
+    color: #3eadcf;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.container {
+    display: grid;
+    width: 800px;
+    height: 750px;
+    margin: auto;
+    gap: 20px;
+    grid-template-columns: repeat(4,1fr);
+    perspective: 800px;
+}
+
+.card {
+   box-shadow: rgba(0,0,0,0.7) 3px 5px 5px;
+   position: relative;
+   border-radius: 20px;
+   width: 100%;
+   height: 100%;
+   transform-style: preserve-3d;
+   transition: transform 1s  ease-in-out;
+   cursor: pointer;
+}
+
+.frontImage,.backImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: 20px;
+}
+.backImage {
+    backface-visibility: hidden;
+}
+
+.toggleCard {
+    transform: rotateY(180deg);
+}
+
+/* ---------------------------------Modal-------------------------- */
+.modal-container {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.7);
+}
+.modal {
+    text-align: center;
+    color: #fff;
+    background: #3eadcf;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 700ms ease-in-out;
+    background-color: black;
+    color: white;
+}
+button:active {
+    transform: scale(0.98);
+}
+
+
+
+
+
+
+
+
+
+/* -------------------Media queries------------------------------------ */
+@media(max-width:850px) {
+    .container {
+        width: 600px;
+    height: 600px;
+    }
+    .title{
+        font-size: 30px;
+    }
+    .card {
+        box-shadow: rgba(0,0,0,0.7) 2px 2px 2px;
+    }
+    .player-lives {
+        font-size: 20px;
+        padding: 10px 10px;
+    }
+}
+
+@media(max-width:635px) {
+    .container {
+        width: 450px;
+    height: 450px;
+    }
+}
+
+@media(max-width:475px) {
+    .container {
+        width: 330px;
+    height: 330px;
+    }
+}
+
+@media(max-width:365px) {
+    .container {
+        width: 300px;
+    height: 300px;
+    }
+}
